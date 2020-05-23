@@ -8,10 +8,9 @@
 	font-size: 15px;
 }
 
-html.js,
-.js body {
-  height: 100%;
-  overflow: hidden;
+.js body:not(.mobile) {
+	height: 100%;
+	overflow: hidden;
 }
 
 body {
@@ -35,11 +34,11 @@ body {
     --cda-left: auto;
     --cda-right: 4rem;
     --cda-bottom: 3rem;
-    --cda-text-size: 12px;
+    --cda-text-size: 15px;
     --cda-text-align: right;
     --cda-footer-color: var(--color-text);
     --footer-align: end;
-    --cda-footer-fontsize: 10px;
+    --cda-footer-fontsize: 12px;
 }
 
 a {
@@ -56,8 +55,9 @@ a:focus {
 }
 
 .frame {
+	top: 0;
 	padding: 1rem;
-	position: absolute;
+	position: fixed;
 	z-index: 1000;
 	font-weight: 600;
 	font-style: italic;
@@ -92,7 +92,6 @@ a:focus {
 	overflow: auto;
 	-webkit-overflow-scrolling: touch;
 	scrollbar-width: none; /* Hide scrollbar in FF */
-	margin: 0 2rem;
 	display: flex;
 	flex-direction: column;
 	align-items: flex-end;
@@ -102,6 +101,11 @@ a:focus {
 	-moz-user-select: none;
 	-ms-user-select: none;
 	user-select: none;
+}
+
+.mobile .menu {
+	padding: 5rem 0;
+	height: auto;
 }
 
 .menu__item {
